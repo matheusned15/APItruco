@@ -8,25 +8,21 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "carta", schema = "truco")
+@Table(name = "jogador", schema = "truco")
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Carta {
+public class Jogador {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private int numero;
+    private Mao maoJogador;
 
-    @Column
-    private NAIPE naipe;
-
-    @Column
-    private COR Cor;
-
+    Jogador() {
+        this.maoJogador = new Mao();
+    }
 }

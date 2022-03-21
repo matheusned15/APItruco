@@ -6,27 +6,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+
 
 @Entity
-@Table(name = "carta", schema = "truco")
+@Table(name = "mao", schema = "truco")
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Carta {
+public class Mao {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private int numero;
+    private final ArrayList<Carta> cartasMao;
 
-    @Column
-    private NAIPE naipe;
 
-    @Column
-    private COR Cor;
-
+    Mao() {
+        cartasMao = new ArrayList<>();
+    }
 }

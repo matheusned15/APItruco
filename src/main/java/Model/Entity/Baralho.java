@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "carta", schema = "truco")
@@ -13,20 +14,17 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Carta {
+
+public class Baralho {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private int numero;
+    private final char c[] = {'A', '2', '3', '4', '5', '6', '7', 'J', 'Q', 'K'};
 
-    @Column
-    private NAIPE naipe;
-
-    @Column
-    private COR Cor;
+    @OneToMany
+    private final ArrayList<Carta> utilizadas = new ArrayList<>();
 
 }
