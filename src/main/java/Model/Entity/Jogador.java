@@ -1,18 +1,7 @@
 package Model.Entity;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
-@Entity
-@Table(name = "jogador", schema = "truco")
-@Builder
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Jogador {
 
     @Id
