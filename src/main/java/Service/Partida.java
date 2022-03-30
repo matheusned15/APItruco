@@ -22,7 +22,5 @@ public class Partida {
 
 
 
-    private criarBaralho (){
 
-    }
 }
